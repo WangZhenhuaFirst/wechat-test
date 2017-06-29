@@ -1,0 +1,20 @@
+template:
+  template_id: "o64KQ62_xxxxxxxxxxxxxxx-Qz-MlNcRKteq8"
+  url: "http://weixin.qq.com/download"
+  topcolor: "#FF0000"
+  data:
+    first:
+      value: "您好，您已报名成功"
+      color: "#0A0A0A"
+    keynote1:
+      value: "XX活动"
+      color: "#CCCCCC"
+    keynote2:
+      value: "2014年9月16日"
+      color: "#CCCCCC"
+    keynote3:
+      value: "上海徐家汇xxx城"
+      color: "#CCCCCC"
+    remark:
+      value: "欢迎再次使用。"
+      color: "#173177"

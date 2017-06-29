@@ -1,0 +1,9 @@
+<body>
+<%= wechat_config_js debug: false, api: %w(hideMenuItems closeWindow) -%>
+<script type="application/javascript">
+  wx.ready(function() {
+      wx.hideOptionMenu();
+  });
+</script>
+<a href="javascript:wx.closeWindow();">Close</a>
+</body>
