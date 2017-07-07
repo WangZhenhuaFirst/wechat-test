@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: font-url('glyphicons-halflings-regular.eot');
+  src: font-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), font-url('glyphicons-halflings-regular.woff2') format('woff2'), font-url('glyphicons-halflings-regular.woff') format('woff'), font-url('glyphicons-halflings-regular.ttf') format('truetype'), font-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+span.or {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #555555;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+/*pagination styles*/
+.pagination .gap, .pagination a { position: relative; float: left; line-height: 1.42857; padding: 4px 10px; margin-left: -1px; border: 1px solid #DDDDDD; color: inherit; text-decoration: none; background-color: #FFFFFF; }
+.pagination a:hover { background-color: #f4f4f4; }
+.pagination .page.current { z-index: 2; float: left; padding: 4px 10px; margin-left: -1px; border: 1px solid #DDDDDD; color: inherit; background-color: #f4f4f4; }
+.pagination>span:first-child>a, .pagination>span:first-child { margin-left: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+.pagination>span:last-child>a, .pagination>span:last-child { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+
+.checkbox-wrapper {
+  line-height: 25px;
+  input[type=checkbox] {
+    vertical-align: bottom;
+  }
+}
+.city-select {
+  display: inline-block;
+  width: auto;
+}
+// .nav-header {
+//   background: image-url('admin/header-profile.png');
+// }
+// .page-heading {
+//   .btn {
+//     margin-top: 30px;
+//   }
+// }
+// .blueimp-gallery > .slides > .slide-loading {
+//   background: image-url('admin/blue_gallery/loading.gif') center no-repeat;
+// }
+// .blueimp-gallery > .play-pause {
+//   background: image-url('admin/blue_gallery/play-pause.png') 0 0 no-repeat;
+// }
+// body:last-child .blueimp-gallery > .play-pause {
+//   background-image: image-url('admin/blue_gallery/play-pause.svg');
+// }
+// body:last-child .blueimp-gallery > .slides > .slide-error {
+//   background-image: image-url('admin/blue_gallery/error.svg');
+// }
+// .edui-btn-toolbar .edui-btn .edui-icon{
+//   background-image: image-url('admin/umeditor/icons.png');
+//   background-image: image-url('admin/umeditor/icons.gif') \9;
+// }
+// .edui-splitbutton .edui-caret{
+//   background: image-url('admin/umeditor/icons.png') -741px 0;
+//   _background: image-url('admin/umeditor/icons.gif') -741px 0;
+// }
+// .edui-combobox .edui-caret{
+//   background: image-url('admin/umeditor/icons.png') -741px 0;
+//   _background: image-url('admin/umeditor/icons.gif') -741px 0;
+// }
+// .edui-combobox-menu .edui-combobox-item .edui-combobox-icon {
+//   background: image-url('admin/umeditor/images/ok.gif') no-repeat 1000px 1000px;
+// }
+// .edui-modal-header .edui-close {
+//   background: image-url('admin/umeditor/close.png') no-repeat center center;
+// }
+// .edui-popup{
+//   background: image-url('admin/umeditor/pop-bg.png') repeat #fff;
+// }
+// .edui-popup .edui-popup-caret.up{
+//   background: image-url('admin/umeditor/caret.png') no-repeat 0 0;
+// }
+// .edui-popup .edui-popup-caret.down{
+//   background: image-url('admin/umeditor/caret.png') no-repeat 0 0;
+// }
+// .edui-toolbar .edui-separator{
+//   background: image-url('admin/umeditor/icons.png') -179px 1px;
+//   background: image-url('admin/umeditor/icons.gif') -179px 1px \9;
+// }
+
+.icon.icon-move {
+  font-size: 20px;
+  @extend .glyphicon !optional;
+  @extend .glyphicon-move !optional;
+}
+td {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+// .blueimp-gallery > .slides > .slide-loading {
+//   background: image-url('editable/loading.gif') center no-repeat;
+//   background-size: 64px 64px;
+// }
+// .blueimp-gallery > .slides > .slide-error {
+//   background: image-url('editable/error.png') center no-repeat;
+// }
+.editableform-loading {
+  background: image-url('editable/loading.gif') center center no-repeat; 
+}
+.editable-clear-x {
+  background: image-url('editable/clear.png') center center no-repeat;
+}

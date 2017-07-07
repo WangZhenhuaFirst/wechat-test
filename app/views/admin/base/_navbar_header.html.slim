@@ -1,0 +1,11 @@
+.row.border-bottom
+  nav.navbar.navbar-static-top.white-bg role='navigation' style='margin-bottom: 0'
+    .navbar-header
+      a class='navbar-minimalize minimalize-styl-2 btn btn-primary' href='#'
+        i class='fa fa-bars'
+    ul.nav.navbar-top-links.navbar-right
+      li
+        span.m-r-sm.text-muted.welcome-message= t('admin.welcome')
+      li
+        = link_to admin_logout_path do
+          i.fa.fa-sign-out= t('logout')

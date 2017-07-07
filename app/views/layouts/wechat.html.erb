@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>慢即是快</title>
+    <%= stylesheet_link_tag 'weui-rails', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'http://cdnjs.gtimg.com/cdnjs/libs/zepto/1.1.4/zepto.min.js' %>
+    <%= javascript_include_tag 'http://res.wx.qq.com/open/js/jweixin-1.2.0.js'%>
+    <%= wechat_config_js debug: true, api: %w(onMenuShareTimeline onMenuShareAppMessage chooseImage previewImage uploadImage downloadImage hideMenuItems closeWindow scanQRCode) %>
+    <%= csrf_meta_tags %>
+    </script>
+</head>
+<body ontouchstart>
+  <%= yield %>
+  <%= render 'wechat/partials/share' %>
+</body>
+</html>

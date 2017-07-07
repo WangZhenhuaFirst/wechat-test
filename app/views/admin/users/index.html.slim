@@ -1,0 +1,11 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-10
+    h2 用户管理
+
+wrapper.wrapper-content.animated.fadeInRight
+  = render 'filters'
+
+  .ibox.float-e-margins
+    .ibox-content
+      = render partial: 'list'
+     

@@ -1,0 +1,39 @@
+/small= "Total: #{@users.total_count}"
+table.table.table-striped id='links'
+  tr
+    th 用户ID
+    th.text-center 头像
+    / th OpenID
+    th 昵称 / 姓名 / 真实姓名
+    / th 状态
+    th 手机号
+    th 标签
+    th 编辑
+  - @users.each do |user|
+    tr
+      td= user.id
+      td.text-center
+        = link_to admin_user_path(user) do
+          = image_tag user.headimgurl, size: '50x50'
+        /- if user.admin?
+          br
+          .label.label-primary.m-t
+            = User.human_attribute_name("is_admin")
+      / th= user.openid
+      td
+        = link_to user.nickname, admin_user_path(user) if user.nickname.present?
+        br
+        /= link_to user.name, admin_user_path(user) if user.name.present?
+        br
+        /= link_to user.realname, admin_user_path(user) if user.realname.present? 
+      /td= user.mobile
+      td
+
+      td
+        
+      td 
+        = link_to '标签', new_admin_wechat_tag_path, :class=>"btn btn-danger"
+
+     
+    
+

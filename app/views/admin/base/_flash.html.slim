@@ -1,0 +1,10 @@
+.row.flash-wrapper
+  - if flash[:notice]
+    .alert.alert-info.alert-dismissable
+      button.close type='button' aria-hidden='true' data-dismiss='alert' x
+      = flash[:notice]
+  - if flash[:alert]
+    .alert.alert-warning.alert-dismissable
+      button.close type='button' aria-hidden='true' data-dismiss='alert' x
+      = flash[:alert]
+      

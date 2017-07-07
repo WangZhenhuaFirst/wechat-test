@@ -1,0 +1,10 @@
+.middle-box.text-center.loginscreen.animated.fadeInDown
+  div
+    h2 慢读书
+    = form_for :session, url: admin_login_path, class: 'm-t', role: 'form' do |f|
+      .form-group
+        = f.phone_field :mobile, class: 'form-control', placeholder: User.human_attribute_name(:mobile), required: true
+      .form-group
+        = f.password_field :password, class: 'form-control', placeholder: User.human_attribute_name(:password), required: true
+      = f.submit 'login', class: 'btn btn-primary block full-width m-b'
+      / = link_to t('wechat_login'), @wechat_login_url, class: 'btn btn-warning block full-width m-b'

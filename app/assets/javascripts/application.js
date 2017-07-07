@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require wechat/share
 //= require turbolinks
 //= require_tree .

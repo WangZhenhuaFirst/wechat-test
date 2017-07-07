@@ -37,6 +37,21 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'wechat'
 gem "omniauth-wechat-oauth2"
+gem 'weui-rails'
+gem 'slim-rails'
+
+gem 'bootstrap-sass'
+gem 'select2-rails'
+gem 'jquery-ui-rails'
+gem 'multi-select-rails'
+
+gem 'font-awesome-sass'
+gem 'simple_form'
+
+
+
+
+
 
 
 group :development, :test do

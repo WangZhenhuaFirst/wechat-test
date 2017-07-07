@@ -1,6 +1,15 @@
 class WechatsController < ApplicationController
   # For details on the DSL available within this file, see https://github.com/Eric-Guo/wechat#rails-responder-controller-dsl
+  layout 'wechat'
   wechat_responder
+  wechat_api
+  
+  def message_box
+  end 
+
+  def direct_message_box
+    render 'weui/message_box', locals: { title: 'Weui', description: 'directly render in controller' }
+  end 
   
   # 默认文字信息responder
   on :text do |request, content|
@@ -21,9 +30,30 @@ class WechatsController < ApplicationController
     end
   end
 
+  on :text, with: '书' do |request|
+    request.reply.text '哪一本？'
+  end 
+
   # 当用户加关注
   on :event, with: 'subscribe' do |request|
+    p request
     request.reply.text "User #{request[:FromUserName]} subscribe now"
+    @info = wechat.user(request[:FromUserName])
+    
+    if User.exists?(openid: request[:FromUserName])
+      @user = User.find_by(openid: request[:FromUserName]) 
+      @user.subscribe = @info.fetch('subscribe')
+      @user.save!
+    else 
+      @user = User.new
+      @user.openid = @info.fetch('openid') 
+      @user.nickname = @info.fetch('nickname')
+      @user.headimgurl = @info.fetch('headimgurl') 
+      @user.subscribe = @info.fetch('subscribe')
+      session[:openid] = @user.openid
+      @user.save!
+    end 
+
   end
 
   # 公众号收到未关注用户扫描qrscene_xxxxxx二维码时。注意此次扫描事件将不再引发上条的用户加关注事件

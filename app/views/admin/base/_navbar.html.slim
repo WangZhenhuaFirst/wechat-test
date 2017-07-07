@@ -1,0 +1,63 @@
+nav.navbar-default.navbar-static-side role='navigation'
+  .sidebar-collapse
+    #side-menu.nav.metismenu
+      li.nav-header
+        .dropdown.profile-element
+          .span
+            = image_tag '', class: 'img-circle', size: '50x50'
+          = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
+            span.clear
+              span.block.m-t-xs
+                /strong.font-bold= link_to current_admin.name, admin_user_path(current_admin)
+                span.text-muted.text-xs.block 管理员
+        .logo-element= t('site_name')
+      li 
+        = link_to '#' do
+          i.fa.fa-users
+          span.nav-label= t('admin.navs.user')
+          span.fa.arrow
+        ul.nav.nav-second-level.collapse
+          li 
+            = link_to t('admin.navs.user'), admin_users_path
+          li 
+            = link_to '', ''
+          li 
+            = link_to '', ''
+      /li 
+        = link_to admin_orders_path do
+          i.fa.fa-shopping-cart
+          span.nav-label= t('admin.orders')
+      
+      li 
+        = link_to '#' do
+          i.fa.fa-wechat
+          span.nav-label 微信
+          span.fa.arrow
+        ul.nav.nav-second-level.collapse
+          /li 
+            = link_to '推送链接', admin_links_path
+          /li class=("#{subnav_class('wechat_tags')}")
+            = link_to '标签', admin_wechat_tags_path
+      li 
+        = link_to '#' do
+          i.fa.fa-wrench
+          span.nav-label 设置
+          span.fa.arrow
+        ul.nav.nav-second-level.collapse
+       
+      li 
+        = link_to '#' do
+          i.fa.fa-database
+          span.nav-label 日志
+          span.fa.arrow
+        ul.nav.nav-second-level.collapse
+          /li class=("#{subnav_class('share_logs')}")
+            = link_to '分享', admin_share_logs_path
+          /li class=("#{subnav_class('view_logs')}")
+            = link_to '分享点击', admin_view_logs_path
+          /li class=("#{subnav_class('points')}")
+            = link_to '积分', admin_points_path
+          /li class=("#{subnav_class('wechat_logs')}")
+            = link_to '微信活动', admin_wechat_logs_path
+          /li class=("#{subnav_class('reward_histories')}")
+            = link_to '奖励', admin_reward_histories_path

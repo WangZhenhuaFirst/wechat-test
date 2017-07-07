@@ -1,0 +1,6 @@
+default:
+  'articles':
+    -
+      title: "读书的方法论"
+      description: "读书切戒在慌忙，涵泳工夫兴味长"
+      pic_url: "http://mmbiz.qpic.cn/mmbiz_jpg/wAgDY0FDnTdXvgILtekfjwthDnQfy4yulVq6SL6CugqvjOkHTzLMbOKWM0ibeibQic8dKqS8WxKNw1X2VcjfJd0DA/0"

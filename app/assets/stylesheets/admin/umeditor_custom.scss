@@ -1,0 +1,31 @@
+.edui-btn-toolbar .edui-btn .edui-icon{
+  background-image: image-url('umeditor/icons.png');
+  background-image: image-url('umeditor/icons.gif') \9;
+}
+.edui-splitbutton .edui-caret{
+  background: image-url('umeditor/icons.png') -741px 0;
+  _background: image-url('umeditor/icons.gif') -741px 0;
+}
+.edui-combobox .edui-caret{
+  background: image-url('umeditor/icons.png') -741px 0;
+  _background: image-url('umeditor/icons.gif') -741px 0;
+}
+.edui-combobox-menu .edui-combobox-item .edui-combobox-icon {
+  background: image-url('umeditor/images/ok.gif') no-repeat 1000px 1000px;
+}
+.edui-modal-header .edui-close {
+  background: image-url('umeditor/close.png') no-repeat center center;
+}
+.edui-popup{
+  background: image-url('umeditor/pop-bg.png') repeat #fff;
+}
+.edui-popup .edui-popup-caret.up{
+  background: image-url('umeditor/caret.png') no-repeat 0 0;
+}
+.edui-popup .edui-popup-caret.down{
+  background: image-url('umeditor/caret.png') no-repeat 0 0;
+}
+.edui-toolbar .edui-separator{
+  background: image-url('umeditor/icons.png') -179px 1px;
+  background: image-url('umeditor/icons.gif') -179px 1px \9;
+}

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WechatReportsControllerTest < ActionDispatch::IntegrationTest
+class Admin::WechatTagsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
