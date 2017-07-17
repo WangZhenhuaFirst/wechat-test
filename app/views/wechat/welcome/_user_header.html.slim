@@ -1,0 +1,16 @@
+- user = current_user if local_assigns[:user].nil?
+
+.user-column
+  .user-column-info
+    .user-column-avatar
+      .photo = image_tag user.headimgurl, alt: user.name
+    .user-column-name
+      .name= user.nickname
+      .desc
+        p
+          | 姓名：
+          = user.name
+        p = user.wechat_tags.pluck(:name).to_s
+
+  .user-column-btn-area
+    = yield :user_buttons

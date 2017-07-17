@@ -11,20 +11,22 @@ html
     - if content_for?(:title)
       = yield(:title)
     - else
-      title= t('site_name')
+      title= '慢即是快'
     = csrf_meta_tags
     = action_cable_meta_tag
     = content_for?(:head) ? yield(:head) : ''
     = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'admin', 'data-turbolinks-track': 'reload'
     / = favicon_link_tag "favicon.png"
-  body class="admin_#{controller_name}" id="admin_#{controller_name}_#{action_name}"
+  body class="admin_#{controller_name} #{body_bg}" id="admin_#{controller_name}_#{action_name}"
     header
       = yield :header
     #wrapper 
-      = render 'admin/base/navbar'
-      #page-wrapper 
-        = render 'admin/base/navbar_header'
+      - if !empty_page?
+        = render 'admin/base/navbar'
+      #page-wrapper class="#{page_wrapper_bg}"
+        - if !empty_page?
+          = render 'admin/base/navbar_header'
         = render 'admin/base/flash'
           
         = yield

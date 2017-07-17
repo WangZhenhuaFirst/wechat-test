@@ -4,28 +4,24 @@
       .row
         .col-sm-3
           .form-group
-            = label_tag :is_admin, User.human_attribute_name(:is_admin), class: 'control-label'
+            = label_tag :is_admin, '管理员', class: 'control-label'
             |：
             = select_tag :is_admin, options_for_select([['是', 'on'], ['否', 'off']], @is_admin), include_blank: '全部', class: 'form-control', onchange: 'this.form.submit();'
         .col-sm-3
           .form-group
-            = label_tag :role, User.human_attribute_name(:role), class: 'control-label'
-            |：
-            /= select_tag :role, options_for_select(User.roles.map{|k, v| [User.human_attribute_name("role.#{k}"), v]}, @role), include_blank: '全部', class: 'form-control', onchange: 'this.form.submit();'
-        .col-sm-3
-          .form-group
-            = label_tag :group_id, User.human_attribute_name(:group_id), class: 'control-label'
-            |：
-            /= select_tag :group_id, options_for_select(Group.select_options, @group_id), include_blank: '全部', class: 'form-control', onchange: 'this.form.submit();'
+            br
+            = submit_tag '搜索', class: 'btn btn-primary btn-sm'
+            | &nbsp;&nbsp;&nbsp;&nbsp;
+            = button_tag '清除', class: 'btn btn-warning btn-sm clear-btn'
       .row
         .col-sm-3
           .form-group
-            = label_tag :mobile, User.human_attribute_name(:mobile), class: 'control-label'
+            = label_tag :mobile,'手机号', class: 'control-label'
             |：
             = text_field_tag :mobile, @mobile, class: 'form-control'
         .col-sm-3
           .form-group
-            = label_tag :name, User.human_attribute_name(:name), class: 'control-label'
+            = label_tag :name,'姓名', class: 'control-label'
             |：
             = text_field_tag :name, @name, class: 'form-control'
         .col-sm-3
@@ -33,12 +29,7 @@
             = label_tag :user_id, '用户ID', class: 'control-label'
             |：
             = text_field_tag :user_id, @user_id, class: 'form-control'
-        .col-sm-3
-          .form-group
-            br
-            = submit_tag '搜索', class: 'btn btn-primary btn-sm'
-            | &nbsp;&nbsp;&nbsp;&nbsp;
-            = button_tag '清除', class: 'btn btn-warning btn-sm clear-btn'
+        
 
 
 

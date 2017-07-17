@@ -1,6 +1,14 @@
 # More option see https://github.com/Eric-Guo/wechat#menu-create
 button:
- -
-  type: "view"
-  name: "请进"
-  url:  "http://z43wsk.natappfree.cc/auth/wechat"
+  -
+    type: "view"
+    name: "速度之害"
+    url:  "http://mv37hb.natappfree.cc/wechat/bad"
+  -
+    type: "view"
+    name: "慢读之利"
+    url: "http://mv37hb.natappfree.cc/wechat/good"
+  -
+    type: "view"
+    name: "个人中心"
+    url: "http://mv37hb.natappfree.cc/wechat/welcome"

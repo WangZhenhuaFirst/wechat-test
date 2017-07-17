@@ -44,13 +44,12 @@ gem 'bootstrap-sass'
 gem 'select2-rails'
 gem 'jquery-ui-rails'
 gem 'multi-select-rails'
-
+gem 'umeditor-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
-
-
-
+gem 'bcrypt'
+gem 'json', '~>1.8'
 
 
 

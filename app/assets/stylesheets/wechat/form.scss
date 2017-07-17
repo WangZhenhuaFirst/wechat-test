@@ -1,0 +1,119 @@
+.default-form-logo {
+  text-align: center;
+  img {
+    width: 32.4%;
+  }
+}
+.default-form-tips {
+  padding: 16px 0;
+  text-align: center;
+  color: #7f7f7f;
+  strong {
+    font-size: $font-sm;
+    color: $font-color;
+  }
+  .num {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    margin-top: -2px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    background-color: $l-orange;
+  }
+  &.white-color {
+    color: #fff;
+  }
+}
+.default-form {
+  $height: 40px;
+  width: 100%;
+  .form-group {
+    @include display-flex;
+    position: relative;
+    margin-bottom: 1px;
+    background-color: #fff;
+    &.transparent {
+      background-color: transparent;
+      .form-control {
+        background-color: rgba(255, 255, 255, .6);
+      }
+    }
+    &.with-btn {
+      $btn-width: 110px;
+      .form-input {
+        padding-right: $btn-width;
+      }
+      .form-control {
+        & ~ .button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: $btn-width;
+          height: $height;
+          line-height: $height;
+          padding: 0;
+          font-size: $font-sm;
+        }
+      }
+    }
+    &.required {
+      padding-left: 6px;
+      &:before {
+        @include vertical-middle;
+        z-index: 1;
+        left: 4px;
+        height: $font-nm;
+        line-height: $font-nm;
+        content: '*';
+        font-size: $font-nm;
+        color: $red;
+      }
+    }
+  }
+  .form-label {
+    height: $height;
+    line-height: $height;
+    padding: 0 0 0 10px;
+    text-align: right;
+  }
+  .form-input {
+    @include flex(1);
+  }
+  .form-control {
+    width: 100%;
+    height: $height;
+    line-height: 1.42857143;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+  }
+  .form-text {
+    @extend .form-control;
+    line-height: $height;
+    padding: 0 10px;
+  }
+  .form-select {
+    position: relative;
+    padding-right: 20px;
+    background-color: #fff;
+    &:after {
+      @include tail-arr;
+    }
+    select {
+      @include no-appearance;
+    }
+  }
+  textarea.form-control {
+    height: auto;
+    line-height: 20px;
+    padding: 10px;
+    font-size: $font-sm;
+  }
+  & > .form-group:last-child {
+    margin-bottom: 0;
+  }
+}

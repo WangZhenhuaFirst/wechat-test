@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   resource :wechat, only:[:show, :create] do 
     collection do 
       get :message_box
@@ -11,20 +10,24 @@ Rails.application.routes.draw do
 
   namespace :wechat do  
     get 'welcome' => 'welcome#index'
+    get 'good' => 'good#index'
+    get 'bad' => 'bad#index'
     resources :users
     resources :share_logs, only: [:create]
   end 
 
-  get 'auth/wechat/callback' => 'wechat/welcome#create'
+  get 'auth/wechat/callback' => 'wechat/sessions#create'
 
   namespace :admin do 
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create'
     get 'logout' => 'sessions#destroy'
+    resources 'faqs', only: [:index, :show]
 
-    resources :users, only: [:index, :show, :update] do 
-      resources :share_logs, only: [:index]
-    end
+    resources :users 
+
+    resources :share_logs, only: :index
+    resources :view_logs
 
     resources :wechat_tags do 
       member do 
@@ -34,5 +37,4 @@ Rails.application.routes.draw do
     root 'sessions#new'  
   end 
 
-  
 end

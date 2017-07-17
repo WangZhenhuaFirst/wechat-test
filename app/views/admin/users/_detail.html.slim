@@ -1,0 +1,34 @@
+.row.m-t-lg
+  .col-md-12
+    .ibox.no-margins
+      .ibox-content
+        .row.m-t-lg
+          .col-md-6
+            .profile-image
+              = link_to admin_user_path(@user) do
+                = image_tag @user.headimgurl, size: '50x50'
+            .profile-info
+              h2.no-margins
+                = link_to @user.nickname, admin_user_path(@user)   
+                - if @user.admin?
+                  .label.label-primary.m-t.m-l
+                    = User.human_attribute_name("is_admin")
+              ul.unstyled.no-padding
+                li
+                  strong= User.human_attribute_name(:openid)
+                  | ：
+                  = @user.openid
+        
+                li
+                  strong= User.human_attribute_name(:created_at)
+                  | ：
+                  = @user.created_at.strftime('%Y/%m/%d %H:%M')
+          .col-md-3
+            ul.unstyled.no-padding
+              li
+                strong= User.human_attribute_name(:subscribe)
+                | ：
+                = @user.subscribe ? t('yes') : t('no')
+           
+          
+      

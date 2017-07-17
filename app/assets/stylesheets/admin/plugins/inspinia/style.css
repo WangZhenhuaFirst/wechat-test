@@ -159,10 +159,10 @@ h5 {
 .nav.navbar-top-links .dropdown-alerts a {
   font-size: 12px;
 }
-.nav-header {
+/*.nav-header {
   padding: 33px 25px;
-  background: url("patterns/header-profile.png") no-repeat;
-}
+background: url("patterns/header-profile.png") no-repeat;
+} */
 .pace-done .nav-header {
   transition: all 0.4s;
 }

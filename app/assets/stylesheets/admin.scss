@@ -1,5 +1,6 @@
 @import "font-awesome-sprockets";
 @import 'font-awesome';
+@import 'admin/plugins/inspinia/bootstrap';
 @import 'admin/plugins/inspinia/animate';
 @import 'admin/plugins/inspinia/style';
 @import 'admin/plugins/blueimp-gallery';
@@ -14,3 +15,7 @@
 @import 'select2';
 @import 'multi-select';
 @import 'admin/common';
+@import 'admin/users'
+
+
+

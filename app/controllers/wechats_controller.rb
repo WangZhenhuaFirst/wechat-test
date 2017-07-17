@@ -1,9 +1,10 @@
-class WechatsController < ApplicationController
+class WechatsController < Wechat::BaseController
   # For details on the DSL available within this file, see https://github.com/Eric-Guo/wechat#rails-responder-controller-dsl
   layout 'wechat'
   wechat_responder
   wechat_api
-  
+  skip_before_action :require_login
+
   def message_box
   end 
 
@@ -43,6 +44,8 @@ class WechatsController < ApplicationController
     if User.exists?(openid: request[:FromUserName])
       @user = User.find_by(openid: request[:FromUserName]) 
       @user.subscribe = @info.fetch('subscribe')
+      @user.subscribe = @info.fetch('subscribe')
+      session[:user_id] = @user.openid
       @user.save!
     else 
       @user = User.new
@@ -50,10 +53,10 @@ class WechatsController < ApplicationController
       @user.nickname = @info.fetch('nickname')
       @user.headimgurl = @info.fetch('headimgurl') 
       @user.subscribe = @info.fetch('subscribe')
-      session[:openid] = @user.openid
+      @user.password = '123456'
+      session[:user_id] = @user.openid
       @user.save!
     end 
-
   end
 
   # 公众号收到未关注用户扫描qrscene_xxxxxx二维码时。注意此次扫描事件将不再引发上条的用户加关注事件
@@ -147,8 +150,5 @@ class WechatsController < ApplicationController
 
   # 当无任何responder处理用户信息时,使用这个responder处理
   on :fallback, respond: 'fallback message'
-
-
-
 
 end

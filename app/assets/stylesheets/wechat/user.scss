@@ -1,0 +1,219 @@
+.user-column {
+  @include display-flex;
+  padding: 15px 10px;
+  background: linear-gradient(to right, #90c699, #9ace76);
+}
+.user-column-info {
+  $height: 50px;
+  @include flex(1);
+  .user-column-avatar {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .photo {
+    width: $height;
+    height: $height;
+    border-radius: 50%;
+    overflow: hidden;
+    & > img {
+      width: $height;
+      height: $height;
+    }
+  }
+  .user-column-name {
+    display: table-cell;
+    padding: 0 10px;
+    vertical-align: middle;
+    word-break: break-all;
+    .name {
+      font-size: $font-nm-b;
+    }
+    .desc {
+      font-size: $font-xs;
+    }
+  }
+}
+.user-column-btn-area {
+  $height: 50px;
+  .item {
+    display: table-cell;
+    vertical-align: middle;
+    height: $height;
+    padding: 0 10px;
+    .box {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: $font-xs;
+    }
+    .user-score {
+      .num {
+        font-size: $font-nm-l;
+      }
+    }
+    .icon {
+      text-align: center;
+      font-size: $font-lg;
+    }
+    .title {
+      text-align: center;
+      font-size: $font-xs;
+    }
+    .button {
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 6px;
+      box-shadow: 0 2px 2px rgba(#030303, .2);
+      font-size: $font-sm;
+      color: #00b4b4;
+      background-color: #fff;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: $font-lg-s;
+      }
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+    &.with-icon {
+      .icon {
+        display: inline-block;
+        margin: -2px 8px 0 0;
+        vertical-align: middle;
+        &.circle {
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+          border-radius: 50%;
+          text-align: center;
+          font-size: $font-nm-l;
+          color: #bfdfb6;
+          background-color: #fff;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+  a.item {
+    color: #2e7c3b;
+  }
+}
+.earnings-tag {
+  $height: 34px;
+  background: linear-gradient(to right, #90c699, #9ace76);
+  .box {
+    line-height: $height;
+    padding: 8px 10px;
+    font-size: $font-sm;
+    background-color: rgba(#fff, .18);
+    .num {
+      display: inline-block;
+      font-size: $font-nm-l;
+      color: $orange;
+      &:first-letter {
+        font-size: $font-sm;
+      }
+    }
+  }
+  .withdraw-btn {
+    height: $height;
+    line-height: $height;
+    padding: 0 10px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #ed7700;
+    .icon {
+      display: inline-block;
+      margin: -2px 4px 0 0;
+      vertical-align: middle;
+      font-size: $font-nm-l;
+    }
+  }
+  &.white-bg {
+    background: #fff;
+  }
+}
+
+/*exchange list styles*/
+.exchange-list {
+  .item {
+    float: left;
+    width: 50%;
+    padding-right: 1px;
+    margin-bottom: 10px;
+    .img {
+      height: 140px;
+      text-align: center;
+      background-color: #f7f7f7;
+      & > img {
+        max-width: 100%;
+        height: 140px;
+      }
+    }
+    .intro {
+      line-height: 20px;
+      padding: 8px 10px;
+      font-size: $font-sm;
+      background-color: #fff;
+    }
+    .name {
+      line-height: 20px;
+      margin-bottom: 2px;
+      font-weight: bold;
+      @include no-break-line;
+    }
+    .price {
+      font-size: $font-nm-b;
+      font-weight: bold;
+      color: $l-orange;
+    }
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+  }
+}
+
+/*score records styles*/
+.score-records {
+  .item {
+    $height: 50px;
+    display: table;
+    width: 100%;
+    height: $height;
+    margin-top: 1px;
+    background-color: #fff;
+    .box {
+      display: table-cell;
+      height: $height;
+      line-height: 18px;
+      padding: 0 8px;
+      vertical-align: middle;
+      font-size: $font-sm;
+    }
+    .title {
+      width: 47%;
+      font-weight: bold;
+    }
+    .points {
+      width: 27%;
+      .num {
+        vertical-align: middle;
+        font-size: $font-nm-l;
+        &.add {
+          color: $orange;
+        }
+      }
+    }
+    .date {
+      width: 26%;
+      text-align: right;
+      font-size: $font-xs;
+    }
+  }
+}
+
+.points-banner-img {
+  width: 100%;
+  vertical-align: top;
+}

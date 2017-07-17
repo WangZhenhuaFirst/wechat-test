@@ -1,0 +1,25 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-8
+    h2 分享日志
+    ol.breadcrumb
+      li= link_to '首页', admin_root_path
+      li.active 列表
+
+.wrapper.wrapper-content.animated.fadeInRight
+  .ibox.float-e-margins
+    .ibox-content
+      = form_tag params.permit(:user_id), method: :get, class: 'form-inline order-filter-form m-b' do
+        - if @user.blank?
+          .form-group.m-r
+            = label_tag :user_name, ShareLog.human_attribute_name(:user_id)
+            | &nbsp;&nbsp;
+            = text_field_tag :user_name, @user_name, class: 'form-control'
+        .form-group.m-r
+          = label_tag :uri, ShareLog.human_attribute_name(:uri)
+          | &nbsp;&nbsp;
+          = text_field_tag :uri, @uri, class: 'form-control'
+          
+        = submit_tag '搜索', class: 'btn btn-success'
+
+      = render 'list'
+      

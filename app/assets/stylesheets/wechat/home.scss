@@ -1,0 +1,199 @@
+.home-banner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .swiper-item {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    &.item1 {
+      background-color: #95e0d4;
+      background-image: image_url('wechat/home/product_img.jpg');
+      background-size: 100% auto;
+      .top-weather {
+        color: #2fb6b5;
+      }
+    }
+    &.item2 {
+      background-color: #2fb7b9;
+      background-image: image_url('wechat/home/product_img2.jpg');
+      background-size: 100% auto;
+      .top-weather {
+        color: #fff;
+      }
+      .home-go-buy-btn {
+        .btn-content {
+          border-top: 1px solid #57d7cb;
+          background-color: #00adac;
+        }
+        &:before {
+          background-image: linear-gradient(-45deg, #00adac 25%, transparent 25%, transparent), linear-gradient(-135deg, #00adac 25%, transparent 25%, transparent), linear-gradient(-45deg, transparent 75%, #00adac 75%), linear-gradient(-135deg, transparent 75%, #00adac 75%);
+        }
+      }
+    }
+  }
+}
+.home-top-logo {
+  position: absolute;
+  z-index: 10;
+  top: 18px;
+  left: 10px;
+  width: 27%;
+}
+.home-top-cart {
+  position: absolute;
+  z-index: 10;
+  top: 18px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: $font-lg;
+  color: #fff;
+  background-color: rgba(#000, .5);
+  .icon {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+.top-weather {
+  position: absolute;
+  z-index: 10;
+  top: 18px;
+  right: 66px;
+  line-height: 20px;
+  font-size: $font-nm-b;
+  .weather-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+.home-go-buy-btn {
+  position: absolute;
+  z-index: 10;
+  bottom: 16%;
+  right: 0;
+  height: 44px;
+  .btn-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 14px;
+    line-height: 43px;
+    border-top: 1px solid #ff8c6c;
+    font-size: $font-nm-l;
+    color: #fff;
+    background-color: #ff4727;
+  }
+  .icon {
+    display: inline-block;
+    margin: -6px 8px 0 0;
+    vertical-align: middle;
+    & > img {
+      width: 23px;
+      height: 23px;
+    }
+  }
+  &:before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -6px;
+    width: 6px;
+    height: 100%;
+    background-color: transparent;
+    background-position: 100% 35%;
+    background-image: linear-gradient(-45deg, #ff4727 25%, transparent 25%, transparent), linear-gradient(-135deg, #ff4727 25%, transparent 25%, transparent), linear-gradient(-45deg, transparent 75%, #ff4727 75%), linear-gradient(-135deg, transparent 75%, #ff4727 75%);
+    background-size: 12px 6px;
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: -14px;
+    left: -12px;
+    height: 100%;
+    background: image_url('wechat/home/btn_shadow.png') no-repeat left bottom;
+    background-size: cover;
+    content: "";
+  }
+}
+
+.home-banner {
+  $height: 150px;
+  height: $height;
+  padding: 0;
+  .swiper-wrapper {
+    height: $height;
+  }
+  .swiper-slide {
+    height: $height;
+    background-repeat: no-repeat;
+    background-position: center top;
+    img {
+      width: 100%;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: $height;
+    }
+  }
+}
+
+.new-user-alert-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .cover {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, .7);
+  }
+  .alert-content {
+    position: absolute;
+    @include center(xy);
+    z-index: 11;
+    width: 247px;
+  }
+  .alert-img {
+    & > img {
+      width: 100%;
+      vertical-align: top;
+    }
+  }
+  .buy-btn {
+    position: absolute;
+    z-index: 20;
+    bottom: 36px;
+    @include center(x);
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: $font-nm-l;
+    color: #fff;
+    background-color: #ff8921;
+  }
+  .close-btn {
+    position: absolute;
+    z-index: 20;
+    top: 28px;
+    right: 10px;
+    width: 33px;
+    height: 33px;
+    background: image_url('wechat/home/new_user_close.png') no-repeat center;
+    background-size: cover;
+  }
+}

@@ -1,0 +1,26 @@
+doctype html
+html lang="zh-CN"
+  head
+    meta charset="utf-8"
+    meta content="template language" name="keywords"
+    meta content="author" name="author"
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport"
+    meta content="yes" name="mobile-web-app-capable"
+    meta content="yes" name="apple-mobile-web-app-capable"
+    meta content="telephone=no" name="format-detection"
+    meta content="email=no" name="format-detection"
+    meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"
+    
+    title 
+      | 慢即是快
+
+    = stylesheet_link_tag 'wechat' 
+    = javascript_include_tag 'http://res.wx.qq.com/open/js/jweixin-1.2.0.js'
+    = javascript_include_tag 'wechat'
+    = wechat_config_js debug: false, api: %w(onMenuShareTimeline onMenuShareAppMessage chooseImage previewImage uploadImage downloadImage hideMenuItems closeWindow scanQRCode) 
+    = csrf_meta_tags 
+ 
+  body class=controller_name id="#{controller_name}_#{action_name}"
+    = yield 
+    footer
+      = render 'wechat/partials/share' 

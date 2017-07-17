@@ -1,0 +1,9 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-8
+    h2= '微信标签'
+    ol.breadcrumb
+      li= link_to '首页', admin_users_path
+  .col-lg-4
+    .title-action
+      - if action_name == 'index'
+        = link_to '添加', {controller: controller_name, action: :new}, class: 'btn btn-sm btn-primary'

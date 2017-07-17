@@ -1,0 +1,12 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-10
+    h2 用户管理
+    ol.breadcrumb
+      li= link_to "用户管理", admin_users_path
+      li.active 详情
+  .col-lg-2
+    = link_to '返回', admin_users_path, class: 'btn btn-sm btn-primary bfR mt20'
+= render 'detail'
+           
+          
+      

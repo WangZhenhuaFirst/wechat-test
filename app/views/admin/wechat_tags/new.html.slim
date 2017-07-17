@@ -1,7 +1,10 @@
-h1 
-	| hello
+= render 'admin/base/subnav'
 
-
-= simple_form_for [:admin, @user] do |f|
-	= f.input 
-	= f.submit '提交', class: 'btn btn-primary'
+.wrapper.wrapper-content.animated.fadeInRight
+  .ibox.float-e-margins
+    .ibox-title
+      h5= '添加'
+    .ibox-content
+			= simple_form_for [:admin, @wechat_tag] do |f|
+				= f.input :name, label: '名称' 
+				= f.submit '提交', class: 'btn btn-primary'

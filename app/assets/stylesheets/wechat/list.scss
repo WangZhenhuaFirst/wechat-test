@@ -1,0 +1,140 @@
+/*list with icon style*/
+.list-with-icon {
+  .item {
+    display: block;
+    position: relative;
+    line-height: 32px;
+    padding: 4px 8px;
+    padding-right: 30px;
+    margin-bottom: 1px;
+    background-color: #fff;
+    .badge {
+      @include vertical-middle;
+      right: 30px;
+      font-size: $font-sm;
+    }
+    .icon {
+      display: inline-block;
+      width: 28px;
+      height: 32px;
+      line-height: 32px;
+      margin: -2px 4px 0 0;
+      text-align: center;
+      vertical-align: middle;
+      font-size: $font-lg-s;
+      &.icon-text {
+        color: #1661bd;
+      }
+    }
+    &.with-badge {
+      padding-right: 110px;
+    }
+    &:active {
+      background-color: $btn-active;
+    }
+    &:after {
+      @include tail-arr;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*list with img style*/
+.list-with-img {
+  $height: 60px;
+  .item {
+    display: block;
+    position: relative;
+    height: $height;
+    background-color: #fff;
+    .cover {
+      float: left;
+      width: $height;
+      height: $height;
+      text-align: center;
+      & > img {
+        max-width: 100%;
+        height: $height;
+      }
+    }
+    .info {
+      height: $height;
+      line-height: 20px;
+      padding: 0 30px 0 $height + 10;
+      font-size: $font-sm;
+      color: #9b9b9b;
+      .title {
+        color: #666;
+        @include no-break-line;
+      }
+      .desc {
+        @include limit-str(2);
+      }
+    }
+    &:active {
+      background-color: $btn-active;
+    }
+    &:after {
+      @include tail-arr;
+    }
+  }
+  &.with-gap {
+    $gap: 10px;
+    .item {
+      height: $height + $gap * 2;
+      padding: $gap;
+      margin-bottom: 1;
+      .info {
+        height: $height;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/*list with operation style*/
+.list-with-operation {
+  width: 100%;
+  overflow: hidden;
+  .operation-item {
+    position: relative;
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    &.swiping {
+      .operation-handle, .tail-operation, .tail-operation > .button {
+        -webkit-transition: -webkit-transform 300ms ease;
+        transition: transform 300ms ease;
+      }
+    }
+  }
+  .operation-handle {
+    -webkit-transition: -webkit-transform 0ms ease;
+    transition: transform 0ms ease;
+  }
+  .tail-operation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include display-flex;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0ms ease;
+    transition: transform 0ms ease;
+    @include transform(translateX(100%));
+    & > .button {
+      position: relative;
+      left: 0;
+      @include display-flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-transition: -webkit-transform 0ms ease;
+      transition: transform 0ms ease;
+    }
+  }
+}

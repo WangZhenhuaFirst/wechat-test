@@ -1,0 +1,23 @@
+= render 'admin/base/subnav'
+
+.wrapper.wrapper-content.animated.fadeInRight
+	.tabs-container
+    ul.nav.nav-tabs
+      li class="#{'active' if %w(edit update).include?(action_name) }"
+        = link_to t('edit'), edit_admin_wechat_tag_path(@wechat_tag)
+      li class="#{'active' if action_name == 'users' }"
+        = link_to '用户', users_admin_wechat_tag_path(@wechat_tag)
+    .tab-content
+      #tab-detail.tab-pane.active
+        .panel-body
+          - if controller_name == 'wechat_tags' && %w(edit update).include?(action_name)
+            = render 'form'
+          - elsif action_name == 'users'
+            = render 'admin/users/list'
+      
+
+
+
+
+
+

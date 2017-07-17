@@ -1,0 +1,22 @@
+table.table.table-striped 
+  thead
+    tr
+      th ViewLog ID
+      - if @user.blank?
+        th= ViewLog.human_attribute_name(:shared_user_id)
+      th= ViewLog.human_attribute_name(:viewer_id)
+      th= ViewLog.human_attribute_name(:uri)
+      th 时间
+  tbody
+    - @view_logs.each do |view_log|
+      tr
+        td= view_log.id
+        - if @user.blank?
+          td
+            = link_to admin_user_path(view_log.shared_user_id) do
+              = view_log.shared_user_name.presence || view_log.shared_user_nickname.presence || view.shared_user_realname.presence
+        td
+          = link_to admin_user_path(view_log.viewer_id) do
+            = view_log.viewer_name.presence || view_log.viewer_nickname.presence || view.viewer_realname.presence
+        td= view_log.uri
+        td= view_log.created_at.localtime.strftime("%Y年%m月%d日 %H:%M")

@@ -1,0 +1,19 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-10
+    h2 用户管理
+    ol.breadcrumb
+      li= link_to "用户管理", admin_users_path
+      li.active 详情
+  .col-lg-2
+    = link_to '返回', admin_users_path, class: 'btn btn-sm btn-primary bfR mt20'
+= render 'detail'
+.wrapper.wrapper-content.animated.fadeInRight
+  .tabs-container	
+    .panel-body
+    	= simple_form_for [:admin, @user], wrapper: :horizontal_form, html: {class: 'form-horizontal admin-user-form'} do |f|
+				= f.input :mobile, label: '手机号'
+				= f.input :name, label: '姓名'
+				= f.input :is_admin, label: '管理员', wrapper: :horizontal_radio_and_checkboxes
+				= f.input :wechat_tag_ids, label: '标签', collection: WechatTag.select_options, input_html: { multiple: true, class: 'select2'}, hint: raw("如标签不存在，请到 <a href='/admin/wechat_tags'>这里</a> 添加后，刷新页面重新选择")
+				= f.submit :submit, class: "btn btn-primary mr20 btn-block"
+

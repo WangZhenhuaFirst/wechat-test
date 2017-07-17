@@ -1,0 +1,21 @@
+= render 'admin/base/subnav'
+.wrapper.wrapper-content.animated.fadeInRight
+  .ibox.float-e-margins
+    .ibox-content     
+      table.table.table-striped
+        tr
+          th ID
+          th= WechatTag.human_attribute_name(:name)
+          th= WechatTag.human_attribute_name(:tagid)
+          th 用户数
+        - @wechat_tags.each do |resource|
+          tr
+            td= resource.id
+            td= resource.name
+            td= resource.tagid
+            td
+              = link_to resource.users.size, users_admin_wechat_tag_path(resource)
+            td
+              .btn-group
+                = link_to '编辑', edit_admin_wechat_tag_path(resource), class: 'btn btn-white btn-sm'
+                = link_to '删除', [:admin, resource], :method => :delete, :data => { :confirm => '确认删除吗？' }, class: 'btn btn-white btn-sm'

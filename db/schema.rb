@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170706062006) do
+ActiveRecord::Schema.define(version: 20170714101414) do
 
   create_table "share_logs", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,9 +30,28 @@ ActiveRecord::Schema.define(version: 20170706062006) do
     t.integer  "subscribe",       default: 0
     t.string   "openid"
     t.string   "headimgurl"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "is_admin",        default: false
+    t.index ["is_admin"], name: "index_users_on_is_admin"
     t.index ["openid"], name: "index_users_on_openid"
+  end
+
+  create_table "users_wechat_tags", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "wechat_tag_id"
+    t.index ["user_id"], name: "index_users_wechat_tags_on_user_id"
+    t.index ["wechat_tag_id"], name: "index_users_wechat_tags_on_wechat_tag_id"
+  end
+
+  create_table "view_logs", force: :cascade do |t|
+    t.integer  "shared_user_id"
+    t.integer  "viewer_id"
+    t.string   "uri"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["shared_user_id"], name: "index_view_logs_on_shared_user_id"
+    t.index ["viewer_id"], name: "index_view_logs_on_viewer_id"
   end
 
   create_table "wechat_sessions", force: :cascade do |t|
